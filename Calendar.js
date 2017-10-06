@@ -156,7 +156,7 @@ export default class Calendar extends Component {
       startDate,
       endDate
     } = this.state;
-    if ((!startDate && !endDate) || day < startDate || (startDate && endDate)) {
+    if ((!startDate && !endDate) || (startDate && endDate)) {
       this.setState({
         startDate: day,
         endDate: null,
