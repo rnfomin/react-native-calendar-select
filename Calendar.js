@@ -165,11 +165,16 @@ export default class Calendar extends Component {
         endDateText: '',
         endWeekdayText: '',
       });
-    } else if (startDate && !endDate && day > startDate) {
+    } else if (startDate && !endDate) {
+      const min = Moment(Math.min(startDate.valueOf(), day.valueOf())),
+            max = Moment(Math.max(startDate.valueOf(), day.valueOf()));
       this.setState({
-        endDate: day,
-        endDateText: this._i18n(day, 'date'),
-        endWeekdayText: this._i18n(day.isoWeekday(), 'weekday')
+        startDate: min,
+        startDateText: this._i18n(min, 'date'),
+        startWeekdayText: this._i18n(min.isoWeekday(), 'weekday'),
+        endDate: max,
+        endDateText: this._i18n(max, 'date'),
+        endWeekdayText: this._i18n(max.isoWeekday(), 'weekday')
       });
     }
   }
