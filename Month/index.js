@@ -2,13 +2,14 @@
  * Created by TinySymphony on 2017-05-11.
  */
 
-import React, {PropTypes, Component} from 'react';
+import React, {Component} from 'react';
 import {
   View,
   Text,
   StyleSheet,
   TouchableHighlight
 } from 'react-native';
+import PropTypes from 'prop-types';
 import Moment from 'moment';
 import styles from './style';
 import Day from '../Day';
